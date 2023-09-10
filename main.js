@@ -7,18 +7,24 @@ const alertShow = document.querySelector('.main-alert')
 const titleAlert = document.getElementById('alertTitle')
 const alertButon = document.getElementById('alertButon')
 
+const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
+const letras = ['letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
+'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz','letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
+'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz',]
 let cards ;
 let lastShow;
 let currentShow;
 let lastCard;
 let oldId;
 let pares = 0
-mensjeG.innerHTML = `Pares ${pares} de 6`
+let limitPeers = letras.length
+mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
 const cardTemplate = `
 <div class="card-front"> </div>
 <div class="card-back"></div>
 `
-const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
+
+
 let machArrayObject ={}
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -28,22 +34,22 @@ function shuffleArray(array) {
 }
 
 
-const pintarCartas =(frutas)=>{
+const pintarCartas =(array)=>{
   
-for (let i = 0 ; i < 12 ;i++){
+for (let i = 0 ; i < array.length ;i++){
   const div = document.createElement('div');
   div.classList.add('card')
   
   div.classList.add(i)
   div.innerHTML = `
-  <div class="card-front ${frutas[i]}""> </div> 
+  <div class="card-front ${array[i]}""> </div> 
   <div class="card-back ></div>
   `
   mainContainer.appendChild(div) //en este primero se mostrara como quedaron
 }
 setTimeout(()=>{
   mainContainer.innerHTML = ""
-  for (let i = 0 ; i < 12 ;i++){
+  for (let i = 0 ; i < array.length ;i++){
     machArrayObject={...machArrayObject,
     [i]:frutas[i]}
     const div = document.createElement('div');
@@ -52,7 +58,7 @@ setTimeout(()=>{
     div.classList.add(i)
     div.innerHTML = `
     <div class="card-front"> </div>
-    <div class="card-back  ${frutas[i]}"></div>
+    <div class="card-back  ${array[i]}"></div>
     `
     mainContainer.appendChild(div) // ya en este si se empieza el juego
   }
@@ -71,7 +77,7 @@ setTimeout(() => {
       if (oldId !=newId){
       if (lastShow == currentShow){
         pares++
-        mensjeG.innerHTML = `Pares ${pares} de 6`
+        mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
         mensaje.innerHTML ='Tenemos masch';
         lastCard.classList.add('win') // se le agrega esto para que no pueda ser volteada si pasa el tiempo
         lastCard.classList.add('cardVolteada')
@@ -101,12 +107,12 @@ setTimeout(() => {
 }
 const startGame = ()=>{
   pares= 0;
-  mensjeG.innerHTML = `Pares ${pares} de 6`
+  mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
   mensaje.innerHTML ='';
   mainContainer.innerHTML = " "
   alertShow.classList.add('hiden')
-  shuffleArray(frutas);
-  pintarCartas(frutas)  
+  shuffleArray(letras);
+  pintarCartas(letras)  
 }
 
 
