@@ -94,6 +94,7 @@ $fontAnuncio:'Yusei Magic', sans-serif;
 
   &-title{
     justify-self: center;
+    grid-column: 2/3;
     grid-row: 2/3;
     
   }
@@ -102,16 +103,26 @@ $fontAnuncio:'Yusei Magic', sans-serif;
     grid-row: 3/4;
     min-width: 120px;
     padding:0 10px ;
+    margin: 0 10px;
     height: 45px;
     color: white;
     font-weight: bold;
-    background: $mainColor;
+    
     box-shadow: 5px  5px 10px  #9a732e ;
     border-radius: 20px;
     @include  Centrar;
   }
   &-boton:hover{
     background: rgb(32, 29, 207);
+  }
+  &-boton--facil{
+    background: $mainColor;
+  }
+  &-boton--medio{
+    background: rgb(19, 87, 133);
+  }
+  &-boton--dificil{
+    background: rgb(197, 28, 28);
   }
 }
 .card{
@@ -230,6 +241,11 @@ background-image: url("/abc/letrag.png");
 .letrah{
 background-image: url("/abc/letrah.png");
 }
+.letrai{
+  background-image: url("/abc/letrai.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
 .letraj{
 background-image: url("/abc/letraj.png");
 }
@@ -296,15 +312,14 @@ background-image: url("/abc/letraz.png");
     grid-template-columns: repeat(6,110px);
   }
   .main-playground {
-    height: 85vh;
-
+    min-height: 100vh;
+    height: auto;
   }
   .ajustes {
     min-width: 469px;
     min-height: 326px;
     &-boton{
-      position: absolute;
-      bottom: 50px;
+      margin: 0 10px;
     }
     &-title{
       position: relative;
@@ -324,8 +339,7 @@ background-image: url("/abc/letraz.png");
     min-height: 407px;
   }
   .ajustes-boton{
-    position: relative;
-    top:40px;
+    margin:0 10px ;
   }
 }
 

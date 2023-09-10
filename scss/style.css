@@ -83,6 +83,7 @@
 }
 .ajustes-title {
   justify-self: center;
+  grid-column: 2/3;
   grid-row: 2/3;
 }
 .ajustes-boton {
@@ -90,10 +91,10 @@
   grid-row: 3/4;
   min-width: 120px;
   padding: 0 10px;
+  margin: 0 10px;
   height: 45px;
   color: white;
   font-weight: bold;
-  background: #ffbd1a;
   box-shadow: 5px 5px 10px #9a732e;
   border-radius: 20px;
   display: flex;
@@ -103,6 +104,15 @@
 }
 .ajustes-boton:hover {
   background: rgb(32, 29, 207);
+}
+.ajustes-boton--facil {
+  background: #ffbd1a;
+}
+.ajustes-boton--medio {
+  background: rgb(19, 87, 133);
+}
+.ajustes-boton--dificil {
+  background: rgb(197, 28, 28);
 }
 
 .card {
@@ -233,6 +243,12 @@
   background-image: url("/abc/letrah.png");
 }
 
+.letrai {
+  background-image: url("/abc/letrai.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .letraj {
   background-image: url("/abc/letraj.png");
 }
@@ -314,15 +330,15 @@
     grid-template-columns: repeat(6, 110px);
   }
   .main-playground {
-    height: 85vh;
+    min-height: 100vh;
+    height: auto;
   }
   .ajustes {
     min-width: 469px;
     min-height: 326px;
   }
   .ajustes-boton {
-    position: absolute;
-    bottom: 50px;
+    margin: 0 10px;
   }
   .ajustes-title {
     position: relative;
@@ -337,7 +353,6 @@
     min-height: 407px;
   }
   .ajustes-boton {
-    position: relative;
-    top: 40px;
+    margin: 0 10px;
   }
 }/*# sourceMappingURL=style.css.map */
