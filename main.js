@@ -13,24 +13,19 @@ let currentShow;
 let lastCard;
 let oldId;
 let pares = 0
-mensjeG.innerHTML = `pares ${pares} de 6`
+mensjeG.innerHTML = `Pares ${pares} de 6`
 const cardTemplate = `
 <div class="card-front"> </div>
 <div class="card-back"></div>
 `
 const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
 let machArrayObject ={}
-
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
-frutas
-shuffleArray(frutas);
-
 
 
 const pintarCartas =(frutas)=>{
@@ -60,13 +55,8 @@ setTimeout(()=>{
     <div class="card-back  ${frutas[i]}"></div>
     `
     mainContainer.appendChild(div) // ya en este si se empieza el juego
-   
   }
-
-
-
 },2000)
-
 stup()
 }
 const stup = () =>{
@@ -80,15 +70,15 @@ setTimeout(() => {
       currentShow = machArrayObject[selectCart.id];
       if (oldId !=newId){
       if (lastShow == currentShow){
-         pares++
-        mensjeG.innerHTML = `pares ${pares} de 6`
+        pares++
+        mensjeG.innerHTML = `Pares ${pares} de 6`
         mensaje.innerHTML ='Tenemos masch';
         lastCard.classList.add('win') // se le agrega esto para que no pueda ser volteada si pasa el tiempo
         lastCard.classList.add('cardVolteada')
         if (pares == 6){
-          alertShow.classList.remove('hiden')
-          alertTitle.innerHTML = "Felicidades "
-          alertButon.innerHTML = "Volver a Jugar"
+          alertShow.classList.remove('hiden');
+          alertTitle.innerHTML = "Felicidades";
+          alertButon.innerHTML = "Volver a Jugar";
         }
       }else {
       mensaje.innerHTML ='Seguir buscando';
@@ -107,14 +97,15 @@ setTimeout(() => {
       }
     })
   )
-
 }, 3000);
-
 }
 const startGame = ()=>{
+  pares= 0;
+  mensjeG.innerHTML = `Pares ${pares} de 6`
+  mensaje.innerHTML ='';
   mainContainer.innerHTML = " "
-  
   alertShow.classList.add('hiden')
+  shuffleArray(frutas);
   pintarCartas(frutas)  
 }
 
