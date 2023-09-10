@@ -4,7 +4,9 @@ $shadowColor:#5f5437c4;
 $secondColor:#fffcee;
 $fontAnuncio:'Yusei Magic', sans-serif;
 
-
+html{
+  scroll-behavior: smooth;
+}
 *{
   padding: 0;
   margin: 0;
@@ -49,9 +51,6 @@ $fontAnuncio:'Yusei Magic', sans-serif;
     background-color: $backColor;
     background-image: 
         linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 75%, transparent 75%, transparent); /* Patrón de fibra de carbono */
-    //background-size: 10px 10px; /* Tamaño del patrón */
-    //background-repeat: repeat; /* Repetir el patrón */
-    
     @include  Centrar;
     justify-content: flex-start;    
   }
@@ -195,6 +194,7 @@ $fontAnuncio:'Yusei Magic', sans-serif;
   transform: rotateY(180deg);
 }
 
+
 .card-back{
   background-size: cover;
   background-position: center;
@@ -300,10 +300,27 @@ background-image: url("/abc/letraz.png");
 
 
 
+.mensaje{
+  z-index: 99;
+  position: absolute;
+  top: 140px;
+  width: 400px;
+  height: 100px;
+  border-radius: 20px;
+  border: 5px solid black;
+  background: white;
+  transform:rotate(-25deg) ;
+  @include  Centrar;
+  &-anuncio{
+    font-size: 30px;
+    font-family: $fontAnuncio;
+  }
+}
 .hiden{
   display: none;
   z-index: -1;
 }
+
 @media (min-width:926px)and (max-width:1006px) {
   .main-container{
     width: auto;
@@ -331,9 +348,7 @@ background-image: url("/abc/letraz.png");
   }
 }
 @media (min-width:1050px) {
-  .logo{
-    
-  }
+ 
   .ajustes {
     min-width: 390px;
     min-height: 407px;

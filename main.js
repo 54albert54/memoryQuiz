@@ -3,14 +3,11 @@ const mensaje = document.getElementById('anuncio2')
 const mensjeG = document.getElementById('anuncio')
 const welcomeArea = document.getElementById('anuncio')
 const alertShow = document.querySelector('.main-alert')
-
+const mensajeVictoria = document.querySelector('.mensaje')
 const titleAlert = document.getElementById('alertTitle')
-const alertButon = document.getElementById('alertButon')
 
-const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
-// const letras = ['letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
-// 'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz','letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
-// 'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz',]
+
+//const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
 
 const letras = ['letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
 'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz']
@@ -89,12 +86,16 @@ setTimeout(() => {
         mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
         mensaje.innerHTML ='Tenemos masch';
         lastCard.classList.add('win') // se le agrega esto para que no pueda ser volteada si pasa el tiempo
-        lastCard.classList.add('cardVolteada')
-
+        
+        lastCard.classList.add('cardVolteadaX')
+        //como ganar el juego
         if (pares == limitPeers){
-          alertShow.classList.remove('hiden');
-          alertTitle.innerHTML = "Felicidades";
-          alertButon.innerHTML = "Volver a Jugar";
+          mensajeVictoria.classList.remove('hiden');
+          setTimeout(() => {
+            alertShow.classList.remove('hiden');
+            alertTitle.innerHTML = "Quieres jugar de nuevo!";
+            mensajeVictoria.classList.add('hiden');
+          }, 2000);
         }
       }else {
       mensaje.innerHTML ='Seguir buscando';
@@ -115,26 +116,22 @@ setTimeout(() => {
   )
 }, 3000);
 }
-const startGame = (mode)=>{
-  console.log(mode);
-  
+const startGame = (mode)=>{  
   pares= 0;
   mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
   mensaje.innerHTML ='';
   mainContainer.innerHTML = " "
   alertShow.classList.add('hiden')
- const newArray = shuffleArray(letras);
- const a = newArray.slice(0,mode) //6combos 20 9combos 17   12combos 14
- const newA = []
- for(let i = 0;i < a.length ; i++){
+  const newArray = shuffleArray(letras);
+  const a = newArray.slice(0,mode) //6combos 20 9combos 17   12combos 14
+  const newA = []
+  for(let i = 0;i < a.length ; i++){
+    newA.push(a[i])
   newA.push(a[i])
-  newA.push(a[i])
-  
- }
- 
- shuffleArray(newA);
- limitPeers= newA.length/2
- mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
+  }
+  shuffleArray(newA);
+  limitPeers= newA.length/2
+  mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
   pintarCartas(newA)  
 }
 

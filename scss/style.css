@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -315,6 +319,26 @@
 
 .letraz {
   background-image: url("/abc/letraz.png");
+}
+
+.mensaje {
+  z-index: 99;
+  position: absolute;
+  top: 140px;
+  width: 400px;
+  height: 100px;
+  border-radius: 20px;
+  border: 5px solid black;
+  background: white;
+  transform: rotate(-25deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mensaje-anuncio {
+  font-size: 30px;
+  font-family: "Yusei Magic", sans-serif;
 }
 
 .hiden {
