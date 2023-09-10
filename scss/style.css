@@ -191,30 +191,6 @@ html {
   background-position: center;
 }
 
-.aguacate {
-  background-image: url("../img/aguacate.png");
-}
-
-.banana {
-  background-image: url("../img/banana.png");
-}
-
-.cereza {
-  background-image: url("../img/cereza.png");
-}
-
-.manzana {
-  background-image: url("../img/manzana.png");
-}
-
-.piña {
-  background-image: url("../img/pina.png");
-}
-
-.sandia {
-  background-image: url("../img/sandia.png");
-}
-
 .letraa {
   background-image: url("/abc/letraa.png");
 }
@@ -372,6 +348,12 @@ html {
   }
 }
 @media (min-width: 1050px) {
+  .main-container {
+    width: auto;
+    height: auto;
+    padding: 21px;
+    grid-template-columns: repeat(6, 110px);
+  }
   .ajustes {
     min-width: 390px;
     min-height: 407px;

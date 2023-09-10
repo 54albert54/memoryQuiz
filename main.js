@@ -7,15 +7,15 @@ const mensajeVictoria = document.querySelector('.mensaje')
 const titleAlert = document.getElementById('alertTitle')
 
 
-//const frutas = ["aguacate","banana","cereza","manzana","piña","sandia","aguacate","banana","cereza","manzana","piña","sandia"]
 
 const letras = ['letraa','letrab','letrac','letrad','letrae','letraf','letrag','letrah','letrai','letraj','letrak','letral','letram','letran','letrao','letrap','letraq',
 'letrar','letras','letrat','letrau','letrav','letraw','letrax','letray','letraz']
 let cards ;
 let lastShow;
 let currentShow;
-let lastCard;
+let lastCard ;
 let oldId;
+let findedCard;
 let pares = 0
 let limitPeers;
 const cardTemplate = `
@@ -24,15 +24,13 @@ const cardTemplate = `
 `
 
 
-let machArrayObject ={}
-
+let machArrayObject ={} 
 
 function shuffleArray(array) {
   
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
-      
   }
   return array
 }
@@ -75,19 +73,23 @@ setTimeout(() => {
   cards.forEach(card =>
     card.addEventListener('click',(e)=>{
       const selectCart = document.getElementById(`${e.currentTarget.id}`)
+      findedCard = selectCart.classList.contains('win')
       selectCart.classList.add('cardVolteada')
       let newId =selectCart.id //esto es para evitar que si tocas dos veces la misma carta el juego te detecte masch
       currentShow = machArrayObject[selectCart.id];
       //console.log(machArrayObject);
       
-      if (oldId !=newId){
-      if (lastShow == currentShow){
+      if (!findedCard){ //se verifica que la carta ya no a sido descubierta
+    
+      if (oldId !=newId ){ //se verifica que la carta no sea la ultima que se selecciona
+        
+      if (lastShow == currentShow ){ // se verifica que la ultma seleccion y la actual concidan
         pares++
         mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
         mensaje.innerHTML ='Tenemos masch';
         lastCard.classList.add('win') // se le agrega esto para que no pueda ser volteada si pasa el tiempo
-        
-        lastCard.classList.add('cardVolteadaX')
+        selectCart.classList.add('win')
+        lastCard.classList.add('cardVolteada')
         //como ganar el juego
         if (pares == limitPeers){
           mensajeVictoria.classList.remove('hiden');
@@ -104,16 +106,17 @@ setTimeout(() => {
       lastCard = selectCart
       setTimeout(() => {
         //con esto verifico que la carta no se a decubierto el par
-        lastCard.classList.contains('win')?NaN
+        lastCard.classList.contains('win')?
+        NaN
         :selectCart.classList.remove('cardVolteada')
       }, 1000);
     }
 }else{
   mensaje.innerHTML ='Ya elige otra';
   selectCart.classList.remove('cardVolteada')
-      }
-    })
-  )
+}}
+})
+)
 }, 3000);
 }
 const startGame = (mode)=>{  
@@ -122,17 +125,17 @@ const startGame = (mode)=>{
   mensaje.innerHTML ='';
   mainContainer.innerHTML = " "
   alertShow.classList.add('hiden')
-  const newArray = shuffleArray(letras);
-  const a = newArray.slice(0,mode) //6combos 20 9combos 17   12combos 14
-  const newA = []
-  for(let i = 0;i < a.length ; i++){
-    newA.push(a[i])
-  newA.push(a[i])
+  const newArray = shuffleArray(letras); //se cambia los index al array
+  const level = newArray.slice(0,mode) //6combos 20 9combos 17   12combos 14
+  const newA = [] //con este es el array que se jugara
+  for(let i = 0;i < level.length ; i++){
+  newA.push(level[i]) // se envian dos veces para que haga una pareja de vada elemento
+  newA.push(level[i])
   }
-  shuffleArray(newA);
+  shuffleArray(newA); //se mescla nuevamente
   limitPeers= newA.length/2
   mensjeG.innerHTML = `Pares ${pares} de ${limitPeers}`
-  pintarCartas(newA)  
+  pintarCartas(newA)  // se manda apintar
 }
 
 
