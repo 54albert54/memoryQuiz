@@ -6,40 +6,56 @@
   <title>Memory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
   <main class="main">
     <section class="main-header">
+      
      
       <h1 class="main-title">Memory Game</h1>
-      <section class="mensaje hiden">
-        <p class="mensaje-anuncio" >Felicidades ...</p>
+      <section  class="mensaje hidden">
+
+        <div class="mensaje-anuncio" >
+          <p>¡¡¡Felicidades ...</p>
+        <p>has <strong>GANADO!!!</strong></p></div>
+        <a class="Boton-victoria" href="/">intentar de nuevo</a>
       </section>
     </section>
-    <div id="firts-mjs" class="main-alert">
+    <section id="firts-mjs" class="main-alert">
+      <div class="Background"></div>
      
+      
       <div class="logo">
         <h2 class="logo-title">MEMORY GAME</h2>
         <div class="logo-card logo--card1"></div>
         <div class="logo-card logo--card2"></div>
       </div>
       <div class="ajustes">
-        <h2 id="alertTitle" class="ajustes-title">Bienvenido</h2>
-        <div  onclick="startGame(6)" class="ajustes-boton ajustes-boton--facil">Facil</div>
-        <div  onclick="startGame(9)" class="ajustes-boton ajustes-boton--medio">Medio</div>
-        <div  onclick="startGame(15)" class="ajustes-boton ajustes-boton--dificil">Dificil</div>
+        <h2 id="alertTitle" class="ajustes-title"></h2>
+        <section class="asjuste-botones">
+
+          <div  onclick="startGame(6)" class="Boton-Style Boton-facil">Easy</div>
+          <div  onclick="startGame(9)" class="Boton-Style Boton-medio">Medio</div>
+          <div  onclick="startGame(15)" class="Boton-Style Boton-dificil">Hard</div>
+        </section>
       </div>
       
-    </div>
+    </section>
     <section class="main-playground">
       <h2 id="anuncio"  class="main-msj"></h2>
       <p id="anuncio2"  class="main-msj"></p>
       <div class="main-container" >
-
+        <!-- aquí es donde se pintaran todas las cartas dependiendo del nivel -->
+        
 
   </div>
+  <a class="Boton-Style  Boton-back" href="/">Back to menu</a>
+  
     </section>
   </main>
   <script src="./main.js"></script>

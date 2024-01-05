@@ -9,21 +9,43 @@ html {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
-.main {
-  border: 1px solid #000;
+a{
+  font-style: none;
+  color: inherit;
+  text-decoration: none;
 }
+.main {
+  
+  border: 1px solid #000;
+  
+}
+.Background{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../public//backgroun.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .6;
+  animation: animateBG 5s linear infinite ;
+  
+}
+
+
+
 .main-header {
   overflow-x: hidden;
   width: 100%;
   height: 60px;
-  background-color: #ffbd1a; /* Color de fondo de base */
+  background-color: #ffbd1a; 
+   /* Color de fondo de base */
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 75%, transparent 75%, transparent); /* Patrón de fibra de carbono */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid rgba(95, 84, 55, 0.768627451);
+  border-bottom: 2px solid #5f5437c4;
 }
 .main-alert {
   z-index: 9;
@@ -34,7 +56,8 @@ html {
   background-color: #edd57e;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 150px;
+  justify-content: flex-start;
   align-items: center;
 }
 .main-playground {
@@ -74,21 +97,55 @@ html {
 }
 
 .ajustes {
-  min-width: 300px;
-  min-height: 230px;
-  background-color: #fffcee;
-  border-radius: 20px;
-  box-shadow: 5px 5px 3px #9a732e;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-auto-flow: row;
-  justify-content: center;
+  
+ background-color: #f7f7f7;
+  position: relative;
+  top: 60px;
+  display: flex;
   align-items: center;
+  flex-direction: column;
+ 
 }
 .ajustes-title {
-  justify-self: center;
-  grid-column: 2/3;
-  grid-row: 2/3;
+  font-weight: 700;
+
+}
+.asjuste-botones{
+  margin-top: 30px;
+  z-index: 90;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+.Boton-Style{
+  
+  transition: .4s ease;
+  margin: 20px 10px ;
+
+  color: #f7f7f7;
+  
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+ 
+}
+.Boton-Style{
+  cursor: pointer;
+
+}
+.Boton-back{
+  border: 1px solid linear-gradient(#ff7070 , rgb(233, 57, 57));
+  box-shadow: 1px 3px 4px #ff0000;
+  background: linear-gradient(#ff7070 , rgb(233, 57, 57));
+}
+
+
+.boton-back:active{
+  position: relative;
+  top: 1px;
+  background: linear-gradient(#a44848 , rgb(147, 36, 36));
+  box-shadow: 1px 2px 2px #4e3b3b;
 }
 .ajustes-boton {
   justify-self: center;
@@ -106,17 +163,18 @@ html {
   justify-content: center;
   align-items: center;
 }
-.ajustes-boton:hover {
-  background: rgb(32, 29, 207);
-}
-.ajustes-boton--facil {
+
+.Boton-facil {
   background: #ffbd1a;
+  background: linear-gradient(#ffbd1a , #a97e11);
 }
-.ajustes-boton--medio {
-  background: rgb(19, 87, 133);
+.Boton-medio {
+ 
+  background: linear-gradient(#135785 , #0c3956);
 }
-.ajustes-boton--dificil {
-  background: rgb(197, 28, 28);
+.Boton-dificil {
+  
+  background: linear-gradient(#ff6e1a , #a91911);
 }
 
 .card {
@@ -135,6 +193,12 @@ html {
   backface-visibility: hidden;
   border-radius: 12px;
   box-shadow: 5px 5px 3px #9a732e;
+  transition: .4 ease-in ;
+}
+.card-front:hover{
+  cursor: pointer;
+  position: relative;
+  top: -3px;
 }
 .card-back {
   border-radius: 12px;
@@ -150,7 +214,7 @@ html {
 .logo {
   position: relative;
   top: 80px;
-  width: 300px;
+  width: 311px;
   height: 90px;
   background-color: #9a732e;
   font-family: "Yusei Magic", sans-serif;
@@ -300,24 +364,43 @@ html {
 .mensaje {
   z-index: 99;
   position: absolute;
-  top: 140px;
+  top: 150px;
   width: 400px;
-  height: 100px;
+  height: 480px;
   border-radius: 20px;
-  border: 5px solid black;
-  background: white;
-  transform: rotate(-25deg);
+  padding-top: 70px;
+  background: linear-gradient(rgb(239, 208, 29) , rgb(216, 29, 29));
+  
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 56%, 50% 100%, 0 56%);
+  
 }
 .mensaje-anuncio {
-  font-size: 30px;
-  font-family: "Yusei Magic", sans-serif;
+ 
+color: white;
+  font-size: 42px;
+  
+}
+.Boton-victoria{
+  position: relative;
+  top: 90px;
+  border: #f7f7f7 2px solid ;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: whitesmoke;
+  animation: showBoton 3s linear  both;
+  opacity: 0;
+}
+@keyframes showBoton{
+  to{
+    opacity: 1;
+  }
 }
 
-.hiden {
+.hidden {
   display: none;
   z-index: -1;
 }
@@ -334,8 +417,10 @@ html {
     height: auto;
   }
   .ajustes {
-    min-width: 469px;
-    min-height: 326px;
+    min-width: 279px;
+    min-height: 119px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 2px 3px 12px;
   }
   .ajustes-boton {
     margin: 0 10px;
@@ -355,8 +440,10 @@ html {
     grid-template-columns: repeat(6, 110px);
   }
   .ajustes {
-    min-width: 390px;
-    min-height: 407px;
+    min-width: 279px;
+    min-height: 119px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 2px 3px 12px;
   }
   .ajustes-boton {
     margin: 0 10px;
