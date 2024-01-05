@@ -1,12 +1,17 @@
-# Memory Game - Juego de Memoria
+# memory-quiz - Juego de Memoria
 
 ¡Bienvenido al Juego de Memoria! Este juego ha sido creado utilizando únicamente HTML, CSS y JavaScript puro. Es un ejercicio diseñado para mejorar tus habilidades de maquetación HTML, estilos CSS y lógica de programación con algoritmos complejos.
 
 ## Demostración
 
-![Memory Game Demo](demo.gif)
 
-Puedes probar el juego en vivo aquí: [Memory Game Demo](https://tu-url-del-juego.com)
+
+
+
+
+[![https://pbs.twimg.com/media/GDHPf1RWkAAEiR2?format=jpg&name=large](https://pbs.twimg.com/media/GDHPf1RWkAAEiR2?format=jpg&name=large "https://pbs.twimg.com/media/GDHPf1RWkAAEiR2?format=jpg&name=large")](https://pbs.twimg.com/media/GDHPf1RWkAAEiR2?format=jpg&name=large "https://pbs.twimg.com/media/GDHPf1RWkAAEiR2?format=jpg&name=large")[![https://pbs.twimg.com/media/GDHPhKrWwAAyrIi?format=jpg&name=large](https://pbs.twimg.com/media/GDHPhKrWwAAyrIi?format=jpg&name=large "https://pbs.twimg.com/media/GDHPhKrWwAAyrIi?format=jpg&name=large")](https://pbs.twimg.com/media/GDHPhKrWwAAyrIi?format=jpg&name=large "https://pbs.twimg.com/media/GDHPhKrWwAAyrIi?format=jpg&name=large")
+[![https://pbs.twimg.com/media/GDHPk1SW0AA4eoY?format=jpg&name=large](https://pbs.twimg.com/media/GDHPk1SW0AA4eoY?format=jpg&name=large "https://pbs.twimg.com/media/GDHPk1SW0AA4eoY?format=jpg&name=large")](https://pbs.twimg.com/media/GDHPk1SW0AA4eoY?format=jpg&name=large "https://pbs.twimg.com/media/GDHPk1SW0AA4eoY?format=jpg&name=large")
+Puedes probar el juego en vivo aquí: [Memory Game Demo](https://memoryquiz.onrender.com/)
 
 ## Características
 
@@ -26,11 +31,20 @@ Puedes probar el juego en vivo aquí: [Memory Game Demo](https://tu-url-del-jueg
 
 - **`index.html`:** Contiene la estructura HTML del juego.
 - **`styles.css`:** Archivo CSS para los estilos y diseño.
-- **`script.js`:** Archivo JavaScript con la lógica del juego.
+- **`main.js`:** Archivo JavaScript con la lógica del juego.
 
 ## Instalación Local
 
 1. Clona este repositorio:
 
-   ```bash
-   git clone https://github.com/tuusuario/memory-game.git
+   ```
+   git clone https://github.com/54albert54/memoryQuiz.git
+   cd memoryQuiz
+   open index.html
+     ```
+	 
+ ##  Contribuciones
+¡Contribuciones son bienvenidas! Si encuentras errores o mejoras posibles, por favor, abre un issue o envía un pull request.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE.md para más detalles.
